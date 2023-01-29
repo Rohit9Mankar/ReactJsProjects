@@ -5,14 +5,14 @@ function App() {
   const expenses = [
     {
       id: 'e1',
-      date: new Date(2023, 1, 28),
+      date: new Date(2023, 0, 28),
       title: "Car Insurance",
       amount: 234,
       location: "Nagpur"
     },
     {
       id: 'e2',
-      date: new Date(2022, 1, 28),
+      date: new Date(2022, 4, 28),
       title: "Surgery",
       amount: 23445,
       location: "Nagpur"
@@ -26,7 +26,7 @@ function App() {
     },
     {
       id: 'e4',
-      date: new Date(2022, 1, 20),
+      date: new Date(2022, 7, 20),
       title: "Bike",
       amount: 19087,
       location: "Nagpur"
