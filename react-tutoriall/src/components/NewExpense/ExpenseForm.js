@@ -1,34 +1,36 @@
 import React, { useState } from 'react';
-//import Card from '../UI/Card';
+
 import './ExpenseForm.css';
 
 const ExpenseForm = (props) => {
-    const [inputTitle, setTitle] = useState("");
-    const [inputDate, setDate] = useState("");
-    const [inputAmount, setAmount] = useState("");
+    const [inputTitle, setInputTitle] = useState('');
+    const [inputDate, setInputDate] = useState('');
+    const [inputAmount, setInputAmount] = useState('');
 
     const titleHandler = (event) => {
-        setTitle(event.target.value);
+        setInputTitle(event.target.value);
     };
     const dateHandler = (event) => {
-        setDate(event.target.value);
+        setInputDate(event.target.value);
     };
     const amountHandler = (event) => {
-        setAmount(event.target.value);
+        setInputAmount(event.target.value);
     };
 
     const submitHandler = (event) => {
         event.preventDefault();
         const expenseDataObj = {
+            
+            
+            date: new Date(inputDate),
             title: inputTitle,
-            amount: inputAmount,
-            date: new Date(inputDate)
+            amount: inputAmount
 
         }
         props.onSaveExpenseData(expenseDataObj);
-        setTitle("");
-        setAmount("");
-        setDate("");
+        setInputTitle("");
+        setInputAmount("");
+        setInputDate("");
     }
 
 
@@ -61,7 +63,7 @@ const ExpenseForm = (props) => {
                         type="date"
                         id="expenseDate"
                         min='2016-03-03'
-                        max='2023-01-02'
+                        max='2023-02-02'
                         value={inputDate}
                         onChange={dateHandler}>
                     </input>
